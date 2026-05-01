@@ -1,11 +1,369 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <!-- Nav -->
+    <nav>
+      <span class="logo">Walter</span>
+      <a href="#get-started" class="btn-primary btn-sm">Get started</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Built for solo founders</p>
+        <h1>Ship faster.<br />Build what matters.</h1>
+        <p class="sub">Stop context-switching between a dozen tools. Walter gives you everything you need to go from idea to live — without the overhead.
+        </p>
+        <div class="hero-actions">
+          <a href="#get-started" id="get-started" class="btn-primary">Start building free</a>
+          <a href="#features" class="btn-ghost">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2L12.4 7.6H18L13.6 11.2L15.4 17L10 13.6L4.6 17L6.4 11.2L2 7.6H7.6L10 2Z" fill="#6366F1"/>
+            </svg>
+          </div>
+          <h3>Zero overhead</h3>
+          <p>No meetings, no handoffs, no waiting. Make a decision and move. Walter works at the pace you set.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <rect x="2" y="2" width="7" height="7" rx="1.5" fill="#6366F1"/>
+              <rect x="11" y="2" width="7" height="7" rx="1.5" fill="#6366F1" opacity="0.5"/>
+              <rect x="2" y="11" width="7" height="7" rx="1.5" fill="#6366F1" opacity="0.5"/>
+              <rect x="11" y="11" width="7" height="7" rx="1.5" fill="#6366F1" opacity="0.3"/>
+            </svg>
+          </div>
+          <h3>Everything connected</h3>
+          <p>Your stack, your data, your workflow — unified in one place so nothing slips through the cracks.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm.8 12H9.2V9.2h1.6V14zm0-6.4H9.2V6h1.6v1.6z" fill="#6366F1"/>
+            </svg>
+          </div>
+          <h3>Clarity at every step</h3>
+          <p>Know exactly where you stand. Walter surfaces what needs your attention and keeps the rest quiet.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 10l5 5 9-9" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Ship with confidence</h3>
+          <p>Built-in checks catch issues before they reach users. You move fast without breaking things that matter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2>Ready to build?</h2>
+        <p>Join solo founders who've cut their setup time and ship on their own terms.</p>
+        <a href="#get-started" class="btn-primary btn-lg">Start building free</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span class="logo">Walter</span>
+      <span class="muted">© 2026</span>
+    </footer>
+  </main>
 </Layout>
+
+<style>
+  :root {
+    --bg: #0A0B0F;
+    --surface: #13151C;
+    --border: #1E2130;
+    --accent: #6366F1;
+    --accent-2: #0EA5E9;
+    --text: #F1F5F9;
+    --muted: #64748B;
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  :global(body) {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Nav */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(10, 11, 15, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 7rem 2rem 6rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin: 0 0 1.5rem;
+  }
+
+  .sub {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0 auto 2.5rem;
+    max-width: 520px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-primary.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-primary.btn-lg {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+
+  /* Features */
+  .features {
+    padding: 4rem 2rem 6rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background 0.15s ease;
+  }
+
+  .feature-card:hover {
+    background: #161820;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 8px;
+  }
+
+  .feature-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .feature-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* CTA */
+  .cta-section {
+    margin: 0 2rem 6rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+  }
+
+  .cta-inner p {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0 0 2rem;
+  }
+
+  /* Footer */
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+
+  .muted {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero { padding: 5rem 1.25rem 4rem; }
+    .features { padding: 3rem 1.25rem 4rem; }
+    .cta-section { margin: 0 1.25rem 4rem; }
+    footer { padding: 1rem 1.25rem; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 420px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>
